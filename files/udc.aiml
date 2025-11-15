@@ -1,0 +1,207 @@
+<aiml version="2.0">
+  <category>
+    <pattern>NAMA SAYA *</pattern>
+    <template>
+      <think><set name="nama"><star/></set></think>
+      Hai <get name="nama"/>! Senang bertemu denganmu.
+      Kamu bisa tanya apa saja tentang paper segmentasi pelanggan e-commerce dengan Fuzzy C-Means.
+    </template>
+  </category>
+
+  <category>
+    <pattern>SIAPA NAMA SAYA</pattern>
+    <template>
+      <condition name="nama">
+        <li value="">Kamu belum kasih tahu namamu. Coba bilang: "NAMA SAYA [namamu]".</li>
+        <li>Namamu <get name="nama"/>.</li>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern>HALO</pattern>
+    <template>
+      <think><set name="topic">UMUM</set></think>
+      Halo!
+      <condition name="nama">
+        <li value="">Saya bot yang menjelaskan paper "Enhancing E-Commerce Customer Segmentation with Fuzzy C-Means Soft Clustering Probabilities". Siapa namamu?</li>
+        <li>Hai <get name="nama"/>! Saya bot yang menjelaskan paper "Enhancing E-Commerce Customer Segmentation with Fuzzy C-Means Soft Clustering Probabilities".</li>
+      </condition>
+      Mau penjelasan singkat atau langsung tanya bagian tertentu (GANTI TOPIK KE LATAR BELAKANG/METODOLOGI/HASIL/IMPLIKASI)?
+    </template>
+  </category>
+
+  <category>
+    <pattern>HAI</pattern>
+    <template><srai>HALO</srai></template>
+  </category>
+
+  <category>
+    <pattern>HI</pattern>
+    <template><srai>HALO</srai></template>
+  </category>
+
+  <category>
+    <pattern>PENJELASAN SINGKAT</pattern>
+    <that>*</that>
+    <template>
+      Paper ini membahas cara meningkatkan segmentasi pelanggan e-commerce
+      dengan algoritma Fuzzy C-Means (clustering fuzzy) dan probabilitas soft clustering.
+      Setiap pelanggan bisa punya derajat keanggotaan di beberapa segmen,
+      sehingga strategi pemasaran bisa lebih tepat sasaran.
+    </template>
+  </category>
+  
+
+  <category>
+    <pattern>APA JUDUL PAPER</pattern>
+    <template>
+      Judul paper ini adalah "Enhancing E-Commerce Customer Segmentation with Fuzzy C-Means Soft Clustering Probabilities".
+    </template>
+  </category>
+
+  <category>
+    <pattern>APA TOPIK PAPER INI</pattern>
+    <template>
+      Paper ini membahas segmentasi pelanggan e-commerce menggunakan Fuzzy C-Means
+      dan probabilitas soft clustering sebagai dasar analisis segmen.
+    </template>
+  </category>
+
+  <category>
+    <pattern>SIAPA SAJA PENULIS PAPER INI</pattern>
+    <template>
+      Penulisnya adalah Muhamad Iqbal Januadi Putra, Vincent Alexander,
+      Ahmad Chusyairi, Raka Admiral Abdurrahman, dan Alexander Daniel Pratama.
+    </template>
+  </category>
+
+  <category>
+    <pattern>DI JURNAL APA PAPER INI DITERBITKAN</pattern>
+    <template>
+      Paper ini diterbitkan di Journal of Applied Informatics and Computing (JAIC).
+    </template>
+  </category>
+
+
+  <category>
+    <pattern>GANTI TOPIK KE LATAR BELAKANG</pattern>
+    <template>
+      <think><set name="topic">LATARBELAKANG</set></think>
+      Oke, sekarang kita masuk ke topik LATAR BELAKANG penelitian ini.
+      Silakan tanya: APA LATAR BELAKANG PENELITIAN INI atau pertanyaan lain.
+    </template>
+  </category>
+
+  <topic name="LATARBELAKANG">
+    <category>
+      <pattern>APA LATAR BELAKANG PENELITIAN INI</pattern>
+      <template>
+        Latar belakangnya adalah pertumbuhan pesat e-commerce yang menghasilkan
+        data pelanggan besar. Perusahaan perlu segmentasi pelanggan yang lebih canggih
+        untuk memahami pola belanja dan menyusun strategi pemasaran yang efektif.
+      </template>
+    </category>
+
+    <category>
+      <pattern>MENGAPA SEGMENTASI PELANGGAN PENTING DI ECOMMERCE</pattern>
+      <template>
+        Karena tidak semua pelanggan punya kebiasaan dan nilai belanja yang sama.
+        Segmentasi membantu menargetkan promosi, layanan, dan rekomendasi produk
+        sesuai karakteristik tiap kelompok pelanggan.
+      </template>
+    </category>
+
+  </topic>
+
+
+
+  <category>
+    <pattern>GANTI TOPIK KE METODOLOGI</pattern>
+    <template>
+      <think><set name="topic">METODOLOGI</set></think>
+      Sekarang kita di topik METODOLOGI.
+      Tanyakan tentang Fuzzy C-Means, soft clustering, atau alur penelitian.
+    </template>
+  </category>
+
+  <topic name="METODOLOGI">
+
+    <category>
+      <pattern>APA ITU FUZZY C MEANS</pattern>
+      <template>
+        Fuzzy C-Means adalah algoritma clustering fuzzy di mana satu data
+        bisa menjadi anggota beberapa cluster dengan derajat keanggotaan tertentu.
+        Di paper ini, metode ini dipakai untuk mengelompokkan pelanggan e-commerce
+        berdasarkan perilaku belanja mereka.
+      </template>
+    </category>
+
+    <category>
+      <pattern>APA ITU SOFT CLUSTERING</pattern>
+      <template>
+        Soft clustering adalah pengelompokan di mana setiap data boleh masuk
+        ke beberapa cluster sekaligus dengan bobot/probabilitas. Cocok untuk
+        perilaku pelanggan yang tidak tegas hanya di satu segmen.
+      </template>
+    </category>
+
+    <category>
+      <pattern>DATA APA YANG DIGUNAKAN</pattern>
+      <template>
+        Digunakan data transaksi pelanggan e-commerce: frekuensi pembelian,
+        total nilai transaksi, jumlah produk, dan fitur perilaku belanja lainnya.
+      </template>
+    </category>
+
+  </topic>
+
+
+
+  <category>
+    <pattern>GANTI TOPIK KE HASIL</pattern>
+    <template>
+      <think><set name="topic">HASIL</set></think>
+      Sekarang kita di topik HASIL. Tanyakan tentang hasil segmentasi pelanggan.
+    </template>
+  </category>
+
+  <topic name="HASIL">
+
+    <category>
+      <pattern>APA HASIL UTAMA PENELITIAN INI</pattern>
+      <template>
+        Hasil utama penelitian ini adalah terbentuk beberapa segmen pelanggan e-commerce
+        dengan karakteristik perilaku belanja yang berbeda-beda, berdasarkan penerapan
+        Fuzzy C-Means dan analisis probabilitas keanggotaan cluster. Segmen ini dapat dimanfaatkan
+        untuk menyusun strategi pemasaran yang lebih tepat sasaran.
+      </template>
+    </category>
+
+    <category>
+      <pattern>APA IMPLIKASI BISNIS DARI SEGMENTASI INI</pattern>
+      <template>
+        Implikasinya perusahaan bisa menargetkan promosi, rekomendasi produk,
+        dan program loyalitas secara lebih tepat ke segmen yang sesuai,
+        sehingga pemasaran lebih efisien.
+      </template>
+    </category>
+
+  </topic>
+
+
+
+  <category>
+    <pattern>*</pattern>
+    <template>
+      Maaf, aku belum mengerti pertanyaanmu.
+      Coba tanya misalnya:
+      - APA JUDUL PAPER
+      - APA ITU FUZZY C MEANS
+      - APA LATAR BELAKANG PENELITIAN INI
+      - APA HASIL UTAMA PENELITIAN INI
+      atau ketik HALO untuk mulai lagi.
+    </template>
+  </category>
+
+</aiml>
